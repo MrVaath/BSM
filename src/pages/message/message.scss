@@ -1,0 +1,59 @@
+page-message {
+    
+  .main-content {
+    background: #333F4B;
+
+    ion-col {
+      padding: 3px;
+    }
+
+    .login-box {
+      margin-top: 25px;
+
+      .login-list {
+        margin-top: 8px;
+        margin-bottom: 5px;
+        border-radius: 0px;
+  
+        .list-item {
+          font-size: 1.0em;
+          margin-bottom: 5px;
+          border: 1px solid #ffffff;
+          border-bottom: 0px !important;
+          box-shadow: none !important;
+  
+          div.item-inner {
+            border-bottom-color: #ffffff !important;
+            box-shadow: none !important;
+            padding: 0px;
+          }
+        }
+      }
+
+      .saveMess-col {
+        margin: 0px 20px 0px 20px;
+        padding-bottom: 4px;
+      }
+    }
+  }
+}
+  
+.error {
+  background: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5));
+
+    .toast-wrapper {
+      background: #e71717;
+    }
+}
+
+.success {
+  background: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5));
+
+    .toast-wrapper {
+      background: #32db64;
+    }
+}

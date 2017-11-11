@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>BSM</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content overflow-scroll="true" class="main-content" padding>
+  
+  <div class="login-box">
+    <ion-row>
+      <ion-col>
+        <ion-list class="login-list" inset>
+          <ion-item class="list-item">
+            <ion-input type="text" placeholder="Tajna wiadomość" name="content" clearInput [(ngModel)]="message.content" required></ion-input>
+          </ion-item>
+          <ion-item class="list-item">
+            <ion-input type="password" placeholder="Wprowadź hasło" name="password" clearInput [(ngModel)]="message.password" required></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col class="saveMess-col">
+        <button ion-button color="secondary" full [disabled]="!message.content || !message.password" (click)="saveMessage()">Zapisz</button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
