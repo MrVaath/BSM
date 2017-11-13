@@ -1,12 +1,17 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>BSM</ion-title>
+    <ion-buttons *ngIf="message.status" end>
+      <button ion-button icon-only (click)="presentActionSheet()">
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content overflow-scroll="true" class="main-content" padding>
   
-  <div class="login-box">
+  <div class="login-box" *ngIf="!message.status">
     <ion-row>
       <ion-col>
         <ion-list class="login-list" inset>
@@ -26,4 +31,35 @@
       </ion-col>
     </ion-row>
   </div>
+
+  <div class="login-box" *ngIf="message.status">
+    <ion-row *ngIf="!showMessage">
+    <ion-col>
+        <ion-list class="login-list" inset>
+        <ion-item class="list-item">
+            <ion-input type="password" placeholder="Wprowadź hasło" name="passwordCheck" clearInput [(ngModel)]="accessPassword" required></ion-input>
+        </ion-item>
+        </ion-list>
+    </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="!showMessage">
+    <ion-col class="saveMess-col">
+        <button ion-button color="secondary" full [disabled]="!accessPassword" (click)="checkPassword()">Pokaż wiadomość</button>
+    </ion-col>
+    </ion-row>
+
+    <ion-card *ngIf="showMessage">
+        <ion-card-header> Twoja wiadomość </ion-card-header>
+        <ion-card-content>
+            {{ savedMessage }}
+        </ion-card-content>
+    </ion-card> 
+    
+    <ion-row *ngIf="showMessage">
+        <ion-col class="saveMess-col">
+            <button ion-button color="secondary" full (click)="hideMess()">Ukryj wiadomość</button>
+        </ion-col>
+    </ion-row>
+</div>
 </ion-content>
