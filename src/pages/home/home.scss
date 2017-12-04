@@ -1,59 +1,83 @@
 page-home {
-    
+  
   .main-content {
-    background: #333F4B;
+    background: color($colors, primary);
   
     ion-col {
       padding: 3px;
     }
-
+  
     .login-box {
-      margin-top: 25px;
-
+      padding: 30px 10px 10px 10px;
+  
       .login-list {
-        margin-top: 8px;
-        margin-bottom: 5px;
-        border-radius: 0px;
+        margin: 5px 15px 10px 15px;
   
         .list-item {
-          font-size: 1.0em;
-          margin-bottom: 5px;
-          border: 1px solid #ffffff;
-          border-bottom: 0px !important;
-          box-shadow: none !important;
-  
-          div.item-inner {
-            border-bottom-color: #ffffff !important;
-            box-shadow: none !important;
-            padding: 0px;
+          padding: 20px 0px 0px 0px;
+          background: color($colors, primary);
+          color: color($colors, just-white);
+
+          .list-label {
+            margin-left: 8px;
+          }
+
+          .text-input {
+            margin: 8px 8px 13px 8px;
+          }
+
+          .item-inner {
+            padding: 0;
           }
         }
       }
-
+  
       .saveMess-col {
-        margin: 0px 20px 0px 20px;
-        padding-bottom: 4px;
+        margin: 25px 0px 0px 15px;
+      }
+
+      .saveMess2-col {
+        margin: 25px 15px 0px 0px;
+        text-align: center;
       }
     }
+
+    // Android -> the last item from the list had border
+    .list .item-input:last-child {
+      border-bottom: 0;
+    }
+
+    // iOS -> the first item from the list had border
+    .list .item-block:first-child {
+      border-top: 0;
+    }
+  }
+
+  // Input highlight color
+  .item.item-input .item-inner {
+    border-bottom-color: color($colors, light-grey) !important;
+    box-shadow: inset 0 -1px 0 0 color($colors, light-grey) !important;
+  }
+
+  .item.item-input.input-has-focus .item-inner {
+    border-bottom-color: color($colors, secondary) !important;
+    box-shadow: inset 0 -1px 0 0 color($colors, secondary) !important;
+  }
+
+  .item.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    border-bottom-color: color($colors, light-grey) !important;
+    box-shadow: inset 0 -1px 0 0 color($colors, light-grey) !important;
+  }
+}
+  
+.success {
+  .toast-wrapper {
+    background: color($colors, success);
   }
 }
 
 .error {
-  background: linear-gradient(
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.5));
-
-    .toast-wrapper {
-      background: #e71717;
-    }
-}
-
-.success {
-  background: linear-gradient(
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.5));
-
-    .toast-wrapper {
-      background: #32db64;
-    }
+  .toast-wrapper {
+    background: color($colors, error);
+  }
 }

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="light">
     <ion-title>BSM</ion-title>
     <ion-buttons *ngIf="message.status" end>
       <button ion-button icon-only (click)="presentActionSheet()">
@@ -14,12 +14,14 @@
   <div class="login-box" *ngIf="!message.status">
     <ion-row>
       <ion-col>
-        <ion-list class="login-list" inset>
+        <ion-list class="login-list">
           <ion-item class="list-item">
-            <ion-input type="text" placeholder="Tajna wiadomość" name="content" clearInput [(ngModel)]="message.content" required></ion-input>
+            <ion-label class="list-label" floating>Tajna wiadomość</ion-label>
+            <ion-input type="text" name="content" clearInput [(ngModel)]="message.content" required></ion-input>
           </ion-item>
           <ion-item class="list-item">
-            <ion-input type="password" placeholder="Wprowadź hasło" name="password" clearInput [(ngModel)]="message.password" required></ion-input>
+            <ion-label class="list-label" floating>Wprowadź hasło</ion-label>
+            <ion-input type="password" name="password" clearInput [(ngModel)]="message.password" required></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
@@ -29,37 +31,48 @@
       <ion-col class="saveMess-col">
         <button ion-button color="secondary" full [disabled]="!message.content || !message.password" (click)="saveMessage()">Zapisz</button>
       </ion-col>
+      <ion-col col-2 class="saveMess2-col">
+        <button ion-button icon-only color="secondary" [disabled]="!message.content || !message.password" (click)="saveMessagePrint()">
+          <ion-icon name="finger-print"></ion-icon>
+        </button>
+      </ion-col>
     </ion-row>
   </div>
 
   <div class="login-box" *ngIf="message.status">
     <ion-row *ngIf="!showMessage">
-    <ion-col>
-        <ion-list class="login-list" inset>
-        <ion-item class="list-item">
-            <ion-input type="password" placeholder="Wprowadź hasło" name="passwordCheck" clearInput [(ngModel)]="accessPassword" required></ion-input>
-        </ion-item>
+      <ion-col>
+        <ion-list class="login-list">
+          <ion-item class="list-item">
+              <ion-label class="list-label" floating>Wprowadź hasło</ion-label>
+              <ion-input type="password" name="passwordCheck" clearInput [(ngModel)]="accessPassword" required></ion-input>
+          </ion-item>
         </ion-list>
-    </ion-col>
+      </ion-col>
     </ion-row>
 
     <ion-row *ngIf="!showMessage">
-    <ion-col class="saveMess-col">
+      <ion-col class="saveMess-col">
         <button ion-button color="secondary" full [disabled]="!accessPassword" (click)="checkPassword()">Pokaż wiadomość</button>
-    </ion-col>
+      </ion-col>
+      <ion-col *ngIf="showFinger" col-2 class="saveMess2-col">
+        <button ion-button icon-only color="secondary" [disabled]="!message.content || !message.password" (click)="checkPrint()">
+          <ion-icon name="finger-print"></ion-icon>
+        </button>
+      </ion-col>
     </ion-row>
 
     <ion-card *ngIf="showMessage">
-        <ion-card-header> Twoja wiadomość </ion-card-header>
-        <ion-card-content>
-            {{ savedMessage }}
-        </ion-card-content>
+      <ion-card-header> Twoja wiadomość </ion-card-header>
+      <ion-card-content>
+        {{ savedMessage }}
+      </ion-card-content>
     </ion-card> 
     
     <ion-row *ngIf="showMessage">
-        <ion-col class="saveMess-col">
-            <button ion-button color="secondary" full (click)="hideMess()">Ukryj wiadomość</button>
-        </ion-col>
+      <ion-col class="saveMess-col">
+        <button ion-button color="secondary" full (click)="hideMess()">Ukryj wiadomość</button>
+      </ion-col>
     </ion-row>
-</div>
+  </div>
 </ion-content>

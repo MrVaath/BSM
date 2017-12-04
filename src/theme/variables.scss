@@ -34,24 +34,33 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    #333F4B,
+  secondary:  #9f38ff,
+  just-white: #ffffff,
+  light:      #ebebeb,
+  light-btn:  #dedede,
+  light-grey: #969DA5,
+  accent:     #474F5A,
+  dark:       #222,
+  facebook:   #3b5998,
+  success:    #32db64,
+  error:      #e71717
 );
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+$text-input-ios-input-clear-icon-color:color($colors, light);
 
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$text-input-md-input-clear-icon-color:color($colors, light);
+$label-md-text-color:color($colors, light-grey);
+$label-md-text-color-focused:color($colors, secondary);
 
 
 
@@ -69,6 +78,7 @@ $colors: (
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
+$text-input-placeholder-color:color($colors, light-grey);
 
 @import "ionic.theme.default";
 

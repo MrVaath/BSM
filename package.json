@@ -20,13 +20,16 @@
     "@angular/http": "4.4.3",
     "@angular/platform-browser": "4.4.3",
     "@angular/platform-browser-dynamic": "4.4.3",
+    "@ionic-native/android-fingerprint-auth": "^4.4.2",
     "@ionic-native/core": "4.3.0",
+    "@ionic-native/keyboard": "^4.4.2",
     "@ionic-native/secure-storage": "^4.4.0",
     "@ionic-native/splash-screen": "4.3.0",
     "@ionic-native/status-bar": "4.3.0",
     "@ionic/storage": "2.0.1",
     "angular-md5": "^0.1.10",
     "cordova-android": "^6.3.0",
+    "cordova-plugin-android-fingerprint-auth": "^1.4.0",
     "cordova-plugin-device": "^1.1.4",
     "cordova-plugin-ionic-webview": "^1.1.16",
     "cordova-plugin-secure-storage": "^2.6.8",
@@ -54,7 +57,8 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {}
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-android-fingerprint-auth": {}
     },
     "platforms": [
       "android"
