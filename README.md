@@ -1,7 +1,14 @@
 # BSM
 *Authors: Patryk Wylegała*
 
-A project created for the Mobile Systems Security course
+A project created for the 'Mobile Systems Security' course (Bezpieczeństwo systemów mobilnych - BSM)
+
+## Table of contents
+
+- [Secure Storage](#secure-storage)
+  - [Android](#android)
+- [Support](#support)
+- [App information](#app-information)
 
 ## Secure Storage
 
@@ -16,6 +23,16 @@ The inverse process is followed on ``get``
 
 Native AES is used when available, otherwise encryption is provided by the [sjcl](https://github.com/bitwiseshiftleft/sjcl) library. API level 19 (Android 4.4 KitKat) is required on Android
 
->*Language: TypeScript (ionic)* <br>
->*Semester: Winter* <br>
->*Year: 2017*
+## Support
+
+Contact me via email
+
+> **pat.wylegala@gmail.com**
+
+## App information
+
+**Language**: _TypeScript (ionic)_
+
+**Semester**: _Winter_
+
+**Year**: _2017_
