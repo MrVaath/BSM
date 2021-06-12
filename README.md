@@ -1,7 +1,7 @@
 # BSM
 *Authors: Patryk Wylegała*
 
-A project created for the 'Mobile Systems Security' course (Bezpieczeństwo systemów mobilnych - BSM)
+A project created for the 'Mobile Systems Security' course (Bezpieczeństwo Systemów Mobilnych - BSM)
 
 ## Table of contents
 
